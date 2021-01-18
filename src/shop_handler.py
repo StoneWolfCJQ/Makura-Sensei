@@ -2,8 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import abc
 import time
+import re
 from .global_settings import GlobalSettings     
-from .product_info import *      
+from .product_info import * 
 
 class BaseHandler():
     fetching_count = 0
@@ -59,7 +60,8 @@ class BaseHandler():
     
     def get_price(self, item):
         raise NotImplementedError
-        
+
+#Booth 
 class BoothHandler(BaseHandler): 
     def __init__(self):
         super(BoothHandler, self).__init__()
@@ -80,23 +82,63 @@ class BoothHandler(BaseHandler):
     def get_thumb_url(self, item):
         return item.find(class_ = 'swap-image').contents[0]['src']
     
-    def get_thumb_bytes(self, item):
-        if GlobalSettings.download_thumb:
-            if self.need_proxie:
-                r = requests.get(item.find(class_ = 'swap-image').contents[0]['src'],
-                                proxies = GlobalSettings.proxies)
-            else:
-                r = requests.get(item.find(class_ = 'swap-image').contents[0]['src'])
-            return r.content
-        else:
-            return ""
-    
     def get_price(self, item):
         return '¥' + item['data-product-price']
     
+    def get_thumb_bytes(self, item):
+        if GlobalSettings.download_thumb:
+            if self.need_proxie:
+                r = requests.get(self.get_thumb_url( item),
+                                proxies = GlobalSettings.proxies)
+            else:
+                r = requests.get(self.get_thumb_url(item))
+            return r.content
+        else:
+            return ""
+ 
+#MelonBooks
+class MelonHandler(BaseHandler): 
+    def __init__(self):
+        super(MelonHandler, self).__init__()
+        self.cookies = {'AUTH_ADULT' : '1'}
+    
+    def get_item_list_from_soup(self, soup):
+        return soup.select("div.layout_box.products.products_flex div.product")
+    
+    def get_product_name(self, item):
+        return item.find('p', class_ = 'title').contents[0]['title']
+    
+    def get_product_id(self, item):
+        pattern = "(?<=^product_)\\d+$"
+        for cn in item['class']:
+            m = re.search(pattern, cn)
+            if m:
+                return m.group(0)
+        raise Exception("No id from melon")
+    
+    def get_stocks(self, item):
+        return 'Yes'
+    
+    def get_price(self, item):
+        return item.find('p', class_='price').find('em').text   
+    
+    def get_thumb_url(self, item):
+        return "https:" + item.find(class_ = 'thumb').find('img')['data-src']
+    
+    def get_thumb_bytes(self, item):
+        if GlobalSettings.download_thumb:
+            if self.need_proxie:
+                r = requests.get(self.get_thumb_url(item),
+                                proxies = GlobalSettings.proxies)
+            else:
+                r = requests.get(self.get_thumb_url(item))
+            return r.content
+        else:
+            return ""
 
 site_handlers = {
     'Booth' : BoothHandler(),
+    'Melon' : MelonHandler(),
 }
 
 def get_product_infos(shop_name, shop_url, sensei_name):    

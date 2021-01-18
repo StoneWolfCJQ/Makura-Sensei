@@ -1,58 +1,56 @@
 {
-  "きみしま青": [
-    {
-      "price": "¥12500",
-      "product_id": "2310347",
-      "product_name": "莉子ちゃん抱き枕カバー",
-      "sensei_name": "きみしま青",
-      "shop_name": "Booth",
-      "stocks": "No",
-      "thumb_bytes": "",
-      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/c5569741-ffcb-4546-974b-9b760ebf0b76/i/2310347/df668829-17b7-45fc-9c01-a218499d1d59_base_resized.jpg"
-    }
-  ],
   "まふゆ": [
     {
       "price": "¥12960",
-      "product_id": "2533908",
-      "product_name": "【受注予約】制服レオちゃん抱き枕カバー【俺嫁準拠】",
+      "product_id": "2614560",
+      "product_name": "★再販中【受注予約】彼シャツレオちゃん抱き枕カバー【俺嫁準拠】",
       "sensei_name": "まふゆ",
       "shop_name": "Booth",
-      "stocks": "No",
+      "stocks": "Yes",
       "thumb_bytes": "",
-      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/2533908/afaab10f-beb0-4420-a1ee-5fa474c11f1b_base_resized.jpg"
+      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/2614560/d674a341-3715-481b-b2a9-34eec0f992eb_base_resized.jpg"
     },
     {
       "price": "¥12960",
       "product_id": "1655944",
-      "product_name": "【受注生産】C97小悪魔さん抱き枕カバー",
+      "product_name": "★再販中【受注予約】小悪魔さん抱き枕カバー【俺嫁準拠】",
       "sensei_name": "まふゆ",
       "shop_name": "Booth",
-      "stocks": "No",
+      "stocks": "Yes",
       "thumb_bytes": "",
-      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/1655944/bb2063ff-4cd9-4624-bb52-44cec26efa3d_base_resized.jpg"
+      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/1655944/07184a44-146e-4e2d-8745-90e4bfe22e12_base_resized.jpg"
     },
     {
       "price": "¥12960",
       "product_id": "1414866",
-      "product_name": "【受注生産】レオちゃん抱き枕カバー【俺嫁準拠】",
+      "product_name": "★再販中【受注予約】レオちゃん抱き枕カバー【俺嫁準拠】",
       "sensei_name": "まふゆ",
       "shop_name": "Booth",
-      "stocks": "No",
+      "stocks": "Yes",
       "thumb_bytes": "",
       "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/8e17bf87-f1d6-4be1-9947-51d39dd1a420/i/1414866/7a22b0fd-7cc5-46b6-9e1a-798fac0deeef_base_resized.jpg"
     }
   ],
-  "油漆娘": [
+  "美少女万華鏡": [
     {
-      "price": "¥12800",
-      "product_id": "2239832",
-      "product_name": "エミリアたんとのデートの夜抱き枕カバー",
-      "sensei_name": "油漆娘",
-      "shop_name": "Booth",
-      "stocks": "No",
+      "price": "¥13,200",
+      "product_id": "585432",
+      "product_name": "八宝備仁描き下ろし「美少女万華鏡」抱き枕カバー 沢渡雫 制服 version(再販)",
+      "sensei_name": "美少女万華鏡",
+      "shop_name": "Melon",
+      "stocks": "Yes",
       "thumb_bytes": "",
-      "thumb_url": "https://booth.pximg.net/c/300x300_a2_g5/2c3e6dc2-f4af-4f27-a11b-d087d87a0c6f/i/2239832/800e32c8-9c30-4c06-aa9e-45953bc15921_base_resized.jpg"
+      "thumb_url": "https://melonbooks.akamaized.net/user_data/packages/resize_image.php?width=151&height=214&image=217001029339.jpg&c=1&aa=1"
+    },
+    {
+      "price": "¥13,200",
+      "product_id": "585430",
+      "product_name": "八宝備仁描き下ろし「美少女万華鏡」抱き枕カバー 篝ノ霧枝 ドレスversion",
+      "sensei_name": "美少女万華鏡",
+      "shop_name": "Melon",
+      "stocks": "Yes",
+      "thumb_bytes": "",
+      "thumb_url": "https://melonbooks.akamaized.net/user_data/packages/resize_image.php?width=151&height=214&image=217001029337.jpg&c=1&aa=1"
     }
   ]
 }

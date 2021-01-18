@@ -16,9 +16,6 @@ def main():
     data_handler.connect()
     data = data_handler.get_main_list()
     senseis_products = get_senseis_products(data)
-    file = open('testout.json', 'w', encoding='utf-8')
-    file.write(json.dumps(senseis_products, sort_keys=True, indent=2, ensure_ascii = False))
-    file.close()
     date, lastest_senseis_products, lastest_shop_products, all_products =\
         data_handler.get_product_update(senseis_products)
     if len(lastest_senseis_products) > 0:
@@ -26,7 +23,10 @@ def main():
         if checked.lower().startswith('y'): 
             data_handler.write_product_update(lastest_shop_products, all_products)
     else:
-        print("No change since %s"%date)
+        print("No change since %s"%date)    
+    file = open('testout.json', 'w', encoding='utf-8')
+    file.write(json.dumps(lastest_senseis_products, sort_keys=True, indent=2, ensure_ascii = False))
+    file.close()
     
 def get_senseis_products(data):
     senseis_products = {}
