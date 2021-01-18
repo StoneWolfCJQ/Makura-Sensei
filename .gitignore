@@ -42,3 +42,6 @@ pydevd*.log
 nodeLanguageServer/**
 nodeLanguageServer.*/**
 testjson.out
+Settings.txt
+.vscode/settings.json
+.vscode/settings.json
