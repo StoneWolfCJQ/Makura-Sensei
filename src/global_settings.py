@@ -6,7 +6,6 @@ class GlobalSettings:
         'https' : ''
     }
     inited = False
-    download_thumb = False
     
     def __init__(self):
         if not GlobalSettings.inited:
@@ -20,4 +19,3 @@ class GlobalSettings:
             GlobalSettings.settings = json.loads(text)
             GlobalSettings.proxies['http'] = GlobalSettings.settings['proxies']
             GlobalSettings.proxies['https'] = GlobalSettings.settings['proxies']
-            GlobalSettings.download_thumb = GlobalSettings.settings['download_thumb']
