@@ -24,15 +24,16 @@ def main():
     if len(lastest_senseis_products) > 0:
         download = input('New products, download thumb?: ')
         if download.lower().startswith('y'):
-            print("writing...")
+            print("downloading...")
             shop_handler.fill_product_thumbs(lastest_senseis_products)
+            print("writing...")
             file_handler.create_thumb_file(lastest_senseis_products, \
                 "New/%s/"%current_date_time.split()[0])
         checked = input('Check new?: ')
         if checked.lower().startswith('y'): 
             data_handler.write_product_update(current_date_time, lastest_shop_products, all_products)
         else:
-            print("User ignored new products")
+            print("New products unchecked")
     else:
         print("No change since %s"%date)
     file = open('testout.json', 'w', encoding='utf-8')

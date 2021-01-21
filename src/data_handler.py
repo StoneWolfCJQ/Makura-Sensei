@@ -2,7 +2,6 @@ import sqlite3
 import json
 import copy
 import re
-from .product_info import *
 class DBHandler():
     def __init__(self, db_path):
         self.db_path = db_path
