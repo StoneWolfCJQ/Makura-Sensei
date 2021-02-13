@@ -91,9 +91,6 @@ class DBHandler():
         latest_senseis_products = {}
         all_products = {}
         for sensei_name, products in senseis_products.items():
-            if len(products) <= 0:
-                latest_senseis_products.pop(sensei_name)
-                continue
             for product in products:
                 if product.stocks != "No" and \
                     any(re.search(word, product.product_name) for word in self.get_product_filter2(sensei_name)):
